@@ -16,6 +16,7 @@ class Vendor:
 
     # wave 4
     def swap_first_item(self, other_vendor):
+        pass
         # check if self or other has empty inventory
             # if yes return False bc can't swap if empty
         # store both self and other first item in temp variable
