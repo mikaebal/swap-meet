@@ -27,20 +27,20 @@ class Vendor:
         return None
 
     # wave 3
-    def swap_items(self, item, id_value, other_vendor, my_item, their_item):
+    def swap_items(self, other_vendor, my_item, their_item):
         # stringify an instance of Item using str()
         # calling str() on a class instance will cause:
         # overriding, known as "operator overloading"
         # the same method exhibits different behavior across instances of different classes
         
+        # temporary variable
         str(self.item) = item
         str(self.id_value) = id_value
 
         result = f"An object of type {item} with id {id_value}."
-        # result = "An object of type" + str(item) + "with id" + str(id_value)
-        # return result
+        return result
 
-        #  removes my_item from this Vendor inventory and adds to friend inventory
+        # removes my_item from this Vendor inventory and adds to friend inventory
         # removes their_item from other Vendor inventory and adds it to this inventory
         # method returns True
         # If vendor inventories do not contain my_item or their_item
@@ -75,3 +75,5 @@ class Vendor:
     # return f"An object of type Clothing with id {id_value}. It is made from {fabric_value} fabric."
 
     #  Decor attributes: id(unique integer)
+
+    
