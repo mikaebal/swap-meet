@@ -1,8 +1,4 @@
 class Vendor:
-    # def __init__(self, item):
-    #     self.inventory = []
-    #     self.item = item
-
     def __init__(self, inventory=None):
         # if no inventory, default to empty list
         if inventory is None:
@@ -10,21 +6,11 @@ class Vendor:
         self.inventory = inventory
 
     def add(self, item):
-        # if item not in self.inventory:
-        #     return False
-        # else:
-
         # always add item to inventory
         self.inventory.append(item)
         return item
 
     def remove(self, item):
-        # if item not in self.inventory:
-        #     return False
-        # else:
-        #     self.inventory.remove(item)
-        #     return item
-
         # remove item if it exists
         if item in self.inventory:
             self.inventory.remove(item)
