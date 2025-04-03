@@ -27,30 +27,31 @@ class Vendor:
         return None
 
     # wave 3
+    # removes my_item from this Vendor inventory and adds to friend inventory
+    # removes their_item from other Vendor inventory and adds it to this inventory
+    # method returns True
+    # If vendor inventories do not contain my_item or their_item
+    # return False
     def swap_items(self, other_vendor, my_item, their_item):
-        # stringify an instance of Item using str()
-        # calling str() on a class instance will cause:
-        # overriding, known as "operator overloading"
-        # the same method exhibits different behavior across instances of different classes
+        self.other_vendor = other_vendor
+        self.my_item = my_item
+        self.their_item = their_item
         
-        # temporary variable
-        str(self.item) = item
-        str(self.id_value) = id_value
-
-        result = f"An object of type {item} with id {id_value}."
-        return result
-
-        # removes my_item from this Vendor inventory and adds to friend inventory
-        # removes their_item from other Vendor inventory and adds it to this inventory
-        # method returns True
-        # If vendor inventories do not contain my_item or their_item
-        # return False
+        if my_item not in self.inventory or their_item not in other_vendor.inventory:
+            return False
+        
+        if my_item in self.inventory and their_item in other_vendor.inventory:
+            self.inventory.remove(my_item)
+            other_vendor.inventory.append(my_item)
+            other_vendor.inventory.remove(their_item)
+            self.inventory.append(their_item)
+            return True
 
     # wave 4
-    def swap_first_item(self, other_vendor):
+        def swap_first_item(self, other_vendor):
         # check if either inventory is empty
-        if not self.inventory or not other_vendor.inventory:
-            return False
+            if not self.inventory or not other_vendor.inventory:
+                return False
 
         # store first items in temp variable
         self_first_item = self.inventory[0]
@@ -69,11 +70,4 @@ class Vendor:
 
     # wave 5
     # Create 3 additional modules: Clothing, Decor, and Electronics
-    
-    # Clothing attributes: id, fabric (defailt "Unknown")
-    # has a function get_category to returns Clothing
-    # return f"An object of type Clothing with id {id_value}. It is made from {fabric_value} fabric."
-
-    #  Decor attributes: id(unique integer)
-
     
