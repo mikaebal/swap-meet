@@ -1,12 +1,14 @@
 import uuid
 
 class Item:
-    def __init__(self, id=None):
+    def __init__(self, id=None, condition=0):
         # if no given id, generate uuid
         if id is None:
             self.id = uuid.uuid4().int
         else:
             self.id = id
+
+        self.condition = condition
 
     def get_category(self):
         # return class name
