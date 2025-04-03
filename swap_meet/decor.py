@@ -5,10 +5,11 @@ class Decor(Item):
         super().__init__(id, condition)
         self.width = width
         self.length = length
+        self.condition = condition
 
     def get_category(self):
-        return self.__class__.__name__
-        # return "Clothing"
+        # return self.__class__.__name__
+        return "Clothing"
     
     def __str__(self):
         id = self.id

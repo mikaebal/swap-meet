@@ -53,19 +53,8 @@ class Vendor:
         if not self.inventory or not other_vendor.inventory:
             return False
 
-        # store first items in temp variable
-        self_first_item = self.inventory[0]
-        other_first_item = other_vendor.inventory[0]
-
-        # remove first item from inventory 
-        self.inventory.pop(0)
-        other_vendor.inventory.pop(0)
-
-        # add swapped items 
-        self.inventory.append(other_first_item)
-        other_vendor.inventory.append(self_first_item)
-
-        return True
+        # DRY - call swap_items using the first items in each inventory
+        return self.swap_items(other_vendor, self.inventory[0], other_vendor.inventory[0])
 
 
     # wave 5
