@@ -1,7 +1,8 @@
 import uuid
 
 class Item:
-    def __init__(self, id=None):
+    def __init__(self, id=None, condition=0):
+        self.condition = condition
         # if no given id, generate uuid
         if id is None:
             self.id = uuid.uuid4().int
@@ -12,6 +13,14 @@ class Item:
         # return class name
         # return self.__class__.__name__
         return "Item"
+    
+    def condition_description(self):
+        if self.condition <= 2:
+            return "pre-loved"
+        if 3 <= self.condition <= 4:
+            return "good condition"
+        if self.condition >= 5:
+            return "like new!"
 
     def __str__(self):
         # stringify an instance of Item using str()
