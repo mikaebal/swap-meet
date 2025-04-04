@@ -9,7 +9,7 @@ class Decor(Item):
 
     def get_category(self):
         # return self.__class__.__name__
-        return "Clothing"
+        return "Decor"
     
     def __str__(self):
         id = self.id

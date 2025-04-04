@@ -67,7 +67,7 @@ class Vendor:
 
         # finds matching items in inventory by category
         for item in self.inventory:
-            if item.category == category:
+            if item.get_category() == category:
                 matching_items.append(item)
         return matching_items
 
